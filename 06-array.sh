@@ -1,5 +1,5 @@
 #!/bin/bash
-MOVIES=("pusha " "rrr "devara)
+MOVIES=("pusha" "rrr "devara")
 #index start from ;0 size is 3
 
 echo "first name   :  ${MOVIES[0]}"
