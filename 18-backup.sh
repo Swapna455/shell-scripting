@@ -26,19 +26,17 @@ if [ $# -lt 2 ]
 then
     USAGE
 fi
+if [ ! -d "$SOURCE_DIR" ]
+then
+    echo -e "$SOURCE_DIR Does not exist...Please check"
+    exit 1
+fi
 
-# if [ ! -d "$SOURCE_DIR" ]
-# then
-#     echo -e "$SOURCE_DIR Does not exist...Please check"
-#     exit 1
-# fi
-
-# if [ ! -d "$DEST_DIR" ]
-# then
-#     echo -e "$DEST_DIR Does not exist...Please check"
-#     exit 1
-# fi
-
+if [ ! -d "$DEST_DIR" ]
+then
+    echo -e "$DEST_DIR Does not exist...Please check"
+    exit 1
+fi
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
